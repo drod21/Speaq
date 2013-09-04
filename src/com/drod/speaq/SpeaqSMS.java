@@ -1,46 +1,26 @@
-package com.example.speaq;
+package com.drod.speaq;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.provider.ContactsContract.PhoneLookup;
 import android.provider.Settings;
 import android.telephony.SmsMessage;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.StyleSpan;
 import android.util.Log;
-import android.widget.CompoundButton;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 import android.speech.tts.TextToSpeech;
 
-public class ReadSMS extends BroadcastReceiver {
+public class SpeaqSMS extends BroadcastReceiver {
 
-	static final String SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
 	private static final String TAG = "ReadSMS";
-	public static final Uri SMS_CONTENT_URI = Uri.parse("content://sms");
-	private SharedPreferences preferences;
 	private Context mContext;
-	public static boolean readTexts;
-	public static String body;
-	public static String findName;
-	public static String caller;
-	private Context mcontext;
-
-	public ReadSMS() {
-	}
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		this.mcontext = context;
-		if (intent.getAction().equals(SMS_RECEIVED)) {
+		this.mContext = context;
+		if (intent.getAction().equals(Speaq.SMS_RECEIVED)) {
 			Bundle bundle = intent.getExtras();
 			if (bundle != null) {
 				readSMS(bundle);
@@ -68,13 +48,13 @@ public class ReadSMS extends BroadcastReceiver {
 		}
 	}
 
-	public void speakSMS(String body, String caller) {
-		if (caller != null) {
-			String displayName = getContactName(caller);
+	public void speakSMS(String smsBodyStr, String phoneNoStr) {
+		if (phoneNoStr != null) {
+			String displayName = getContactName(phoneNoStr);
 			if (displayName == null) {
-				displayName = caller;
+				displayName = phoneNoStr;
 			}
-			if (body != null && body.length() > 0) {
+			if (smsBodyStr != null && smsBodyStr.length() > 0) {
 				Speaq.textSpeech.speak("Text From " + displayName, TextToSpeech.QUEUE_ADD,
 						null);
 			}
@@ -84,7 +64,7 @@ public class ReadSMS extends BroadcastReceiver {
 	public String getContactName(String findName) {
 		Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI,
 				Uri.encode(findName));
-		Cursor cr = mcontext.getContentResolver().query(uri,
+		Cursor cr = mContext.getContentResolver().query(uri,
 				new String[] { PhoneLookup.DISPLAY_NAME }, null, null, null);
 		String displayName = null;
 		if (cr.getCount() > 0) {

@@ -1,5 +1,5 @@
 /** Automatically generated file. DO NOT MODIFY */
-package com.example.speaq;
+package com.drod.speaq;
 
 public final class BuildConfig {
     public final static boolean DEBUG = true;

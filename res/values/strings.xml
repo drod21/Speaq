@@ -4,5 +4,7 @@
     <string name="app_name">Speaq</string>
     <string name="action_settings">Settings</string>
     <string name="voice_read">Read your SMS out loud</string>
+    <string name="regButton">Speak SMS</string>
+    <string name="unRegButton">Stop Speaking SMS</string>
 
 </resources>

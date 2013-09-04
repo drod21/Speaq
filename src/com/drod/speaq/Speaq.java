@@ -1,4 +1,4 @@
-package com.example.speaq;
+package com.drod.speaq;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +13,8 @@ import android.widget.ToggleButton;
 public class Speaq extends Activity implements OnInitListener {
 	private int MY_DATA_CHECK_CODE = 0;
 	public static TextToSpeech textSpeech;
-	private ReadSMS receiver;
+	public static final String SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
+	private SpeaqSMS receiver;
 	private ToggleButton mVoiceToggle;
 
 	/** Called when the activity is first created. */
@@ -22,6 +23,7 @@ public class Speaq extends Activity implements OnInitListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		mVoiceToggle = (ToggleButton) findViewById(R.id.voice_read_toggle);
+		
 		Intent findIntent = new Intent();
 		findIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
 		startActivityForResult(findIntent, MY_DATA_CHECK_CODE);
@@ -75,9 +77,9 @@ public class Speaq extends Activity implements OnInitListener {
 	}
 
 	public void registerSMS() {
-		receiver = new ReadSMS();
+		receiver = new SpeaqSMS();
 		IntentFilter filter = new IntentFilter();
-		filter.addAction(ReadSMS.SMS_RECEIVED);
+		filter.addAction(SMS_RECEIVED);
 		registerReceiver(receiver, filter);
 		Toast.makeText(getApplicationContext(), "registered for incoming sms",
 				Toast.LENGTH_LONG).show();
