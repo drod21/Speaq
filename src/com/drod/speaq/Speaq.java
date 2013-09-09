@@ -6,9 +6,16 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import android.widget.TextView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import com.googlecode.androidannotations.annotations.AfterViews;
+import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.ViewById;
 
 public class Speaq extends Activity implements OnInitListener {
 	private int MY_DATA_CHECK_CODE = 0;
@@ -16,6 +23,7 @@ public class Speaq extends Activity implements OnInitListener {
 	public static final String SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
 	private SpeaqSMS receiver;
 	private ToggleButton mVoiceToggle;
+	static boolean serviceIsActive = false;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -33,9 +41,9 @@ public class Speaq extends Activity implements OnInitListener {
 		// Is the toggle on?
 		boolean on = ((ToggleButton) view).isChecked();
 		if (on) {
-			registerSMS();
+			startService();
 		} else {
-			unregisterSMS();
+			stopService();
 		}
 	}
 
@@ -72,28 +80,33 @@ public class Speaq extends Activity implements OnInitListener {
 			textSpeech.stop();
 			textSpeech.shutdown();
 		}
-		unregisterSMS();
-		super.onDestroy();
+		stopService();
 	}
 
-	public void registerSMS() {
+	public void startService() {
 		receiver = new SpeaqSMS();
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(SMS_RECEIVED);
 		registerReceiver(receiver, filter);
-		Toast.makeText(getApplicationContext(), "registered for incoming sms",
+		Toast.makeText(getApplicationContext(), "Listening for incoming SMS",
 				Toast.LENGTH_LONG).show();
 	}
 
-	public void unregisterSMS() {
+	public void stopService() {
 		try {
 			unregisterReceiver(receiver);
 			Toast.makeText(getApplicationContext(),
-					"unregistered for listening sms", Toast.LENGTH_LONG).show();
+					"No longer listening for incoming SMS", Toast.LENGTH_LONG).show();
 		} catch (Exception exe) {
 			Toast.makeText(getApplicationContext(),
 					"sms listener is already unregistered", Toast.LENGTH_LONG)
 					.show();
 		}
 	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
 }

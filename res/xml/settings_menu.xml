@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceCategory
+    android:title="@string/pref_voice_read_sms">
+    <CheckBoxPreference
+        android:title="@string/read_caller"
+        android:summary="@string/read_caller_summary"
+    	android:defaultValue="false" />
+    <CheckBoxPreference
+        android:title="@string/read_body"
+        android:summary="@string/read_body_summary"
+        android:defaultValue="false" />
+</PreferenceCategory>
+
+</PreferenceScreen>
