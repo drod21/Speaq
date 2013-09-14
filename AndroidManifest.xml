@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.drod.speaq"
     android:versionCode="2"
-    android:versionName="0.0.2">
+    android:versionName="0.0.3">
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="16"
         android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.WRITE_SMS" />
@@ -29,5 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".com.drod.speaq.SpeaqService"
+            android:enabled="true"/>
     </application>
 </manifest>
