@@ -14,7 +14,7 @@ import android.speech.tts.TextToSpeech;
 
 public class SpeaqSMS extends BroadcastReceiver {
 
-	private static final String TAG = "ReadSMS";
+	static final String TAG = "ReadSMS";
 	private Context mContext;
 
 	@Override
@@ -22,6 +22,7 @@ public class SpeaqSMS extends BroadcastReceiver {
 		this.mContext = context;
 		if (intent.getAction().equals(Speaq.SMS_RECEIVED)) {
 			Bundle bundle = intent.getExtras();
+			Log.i(TAG, "SMS received");
 			if (bundle != null) {
 				readSMS(bundle);
 			}
