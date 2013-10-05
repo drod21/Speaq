@@ -9,5 +9,9 @@
     <string name="read_body">Read the SMS body</string>
     <string name="read_body_summary">Read the SMS Message</string>
     <string name="read_caller_summary">Read the SMS Sender</string>
+    <string name="headset_summary">Auto read when headset connected</string>
+    <string name="bluetooth_summary">Auto read when bluetooth connected</string>
+    <string name="headset">Headset</string>
+    <string name="bluetooth">Bluetooth</string>
 
 </resources>

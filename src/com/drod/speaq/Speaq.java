@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -27,6 +29,9 @@ public class Speaq extends Activity implements OnInitListener {
 		Intent findIntent = new Intent();
 		findIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
 		startActivityForResult(findIntent, MY_DATA_CHECK_CODE);
+		
+		// Load the default preference values
+        PreferenceManager.setDefaultValues(this, R.xml.settings_menu, false);
 	}
 	
 	public void onStart() {
@@ -113,5 +118,16 @@ public class Speaq extends Activity implements OnInitListener {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
         return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

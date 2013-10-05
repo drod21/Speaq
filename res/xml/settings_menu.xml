@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-<PreferenceCategory
-    android:title="@string/pref_voice_read_sms">
+
+    <PreferenceCategory 
+        android:title="@string/pref_voice_read_sms" >
+        <CheckBoxPreference
+            android:id="@+id/caller"
+            android:defaultValue="false"
+            android:summary="@string/read_caller_summary"
+            android:title="@string/read_caller" />
+        <CheckBoxPreference
+            android:id="@+id/body"
+            android:defaultValue="false"
+            android:summary="@string/read_body_summary"
+            android:title="@string/read_body" />
+    </PreferenceCategory>
+
     <CheckBoxPreference
-        android:title="@string/read_caller"
-        android:summary="@string/read_caller_summary"
-    	android:defaultValue="false" />
+        android:id="@+id/bluetooth"
+        android:defaultValue="false"
+        android:summary="@string/bluetooth_summary"
+        android:title="@string/bluetooth" />
     <CheckBoxPreference
-        android:title="@string/read_body"
-        android:summary="@string/read_body_summary"
-        android:defaultValue="false" />
-</PreferenceCategory>
+        android:id="@+id/headset"
+        android:defaultValue="false"
+        android:summary="@string/headset_summary"
+        android:title="@string/headset" />
 
 </PreferenceScreen>
