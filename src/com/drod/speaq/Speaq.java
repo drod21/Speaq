@@ -1,5 +1,8 @@
 package com.drod.speaq;
 
+import com.drod.settings.Settings;
+import com.drod.settings.SettingsFragment;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -125,6 +128,8 @@ public class Speaq extends Activity implements OnInitListener {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.action_settings:
+                Intent intent = new Intent(this, Settings.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

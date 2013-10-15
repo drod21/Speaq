@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract.PhoneLookup;
-import android.provider.Settings;
 import android.telephony.SmsMessage;
 import android.util.Log;
 import android.speech.tts.TextToSpeech;

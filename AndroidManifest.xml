@@ -30,7 +30,11 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".com.drod.speaq.SpeaqService"
+            android:name="com.drod.speaq.SpeaqService"
             android:enabled="true"/>
+        <activity
+            android:name="com.drod.settings.Settings"
+            android:label="Settings" >
+        </activity>
     </application>
 </manifest>
