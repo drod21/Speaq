@@ -15,15 +15,18 @@
             android:title="@string/read_body" />
     </PreferenceCategory>
 
-    <CheckBoxPreference
-        android:id="@+id/bluetooth"
-        android:defaultValue="false"
-        android:summary="@string/bluetooth_summary"
-        android:title="@string/bluetooth" />
-    <CheckBoxPreference
-        android:id="@+id/headset"
-        android:defaultValue="false"
-        android:summary="@string/headset_summary"
-        android:title="@string/headset" />
+    <PreferenceCategory
+        android:title="Hands Free Settings">
+        <CheckBoxPreference
+            android:id="@+id/bluetooth"
+            android:defaultValue="false"
+            android:summary="@string/bluetooth_summary"
+            android:title="@string/bluetooth" />
+        <CheckBoxPreference
+            android:id="@+id/headset"
+            android:defaultValue="false"
+            android:summary="@string/headset_summary"
+            android:title="@string/headset" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
