@@ -4,11 +4,13 @@
     <PreferenceCategory 
         android:title="@string/pref_voice_read_sms" >
         <CheckBoxPreference
+            android:key="caller_read"
             android:id="@+id/caller"
             android:defaultValue="false"
             android:summary="@string/read_caller_summary"
             android:title="@string/read_caller" />
         <CheckBoxPreference
+            android:key="body_read"
             android:id="@+id/body"
             android:defaultValue="false"
             android:summary="@string/read_body_summary"
@@ -18,11 +20,13 @@
     <PreferenceCategory
         android:title="Hands Free Settings">
         <CheckBoxPreference
+            android:key="bluetooth_auto"
             android:id="@+id/bluetooth"
             android:defaultValue="false"
             android:summary="@string/bluetooth_summary"
             android:title="@string/bluetooth" />
         <CheckBoxPreference
+            android:key="headset_auto"
             android:id="@+id/headset"
             android:defaultValue="false"
             android:summary="@string/headset_summary"

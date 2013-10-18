@@ -7,9 +7,9 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract.PhoneLookup;
+import android.speech.tts.TextToSpeech;
 import android.telephony.SmsMessage;
 import android.util.Log;
-import android.speech.tts.TextToSpeech;
 
 public class SpeaqSMS extends BroadcastReceiver {
 
@@ -57,9 +57,9 @@ public class SpeaqSMS extends BroadcastReceiver {
 			if (smsBodyStr != null && smsBodyStr.length() > 0) {
 				Speaq.textSpeech.speak("Text From " + displayName, TextToSpeech.QUEUE_ADD,
 						null);
-			}
-		}
+            }
 	}
+    }
 
 	public String getContactName(String findName) {
 		Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI,

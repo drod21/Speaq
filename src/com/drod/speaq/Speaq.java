@@ -1,8 +1,5 @@
 package com.drod.speaq;
 
-import com.drod.settings.Settings;
-import com.drod.settings.SettingsFragment;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -12,11 +9,13 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import android.view.MenuInflater;
+
+import com.drod.settings.Settings;
 
 public class Speaq extends Activity implements OnInitListener {
 	private int MY_DATA_CHECK_CODE = 0;
