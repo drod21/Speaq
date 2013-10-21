@@ -29,7 +29,7 @@ public class SpeaqSMS extends BroadcastReceiver {
 	}
 
 	public void readSMS(Bundle bundle) {
-		SmsMessage[] msgs = null;
+		SmsMessage[] msgs;
 		try {
 			Object[] pdus = (Object[]) bundle.get("pdus");
 			if (pdus != null) {
