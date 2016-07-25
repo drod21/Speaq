@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Speaq</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="bluetooth_summary">Auto read when bluetooth connected</string>
+    <string name="headset">Headset</string>
+    <string name="headset_summary">Auto read when headset connected</string>
+    <string name="pref_voice_read_sms">SMS Settings</string>
+    <string name="read_body">Read the SMS body</string>
+    <string name="read_body_summary">Read the SMS Message</string>
+    <string name="read_caller">Read the SMS sender</string>
+    <string name="read_caller_summary">Read the SMS Sender</string>
+    <string name="voice_read">Read your SMS out loud</string>
+    <style name="AppBaseTheme" parent="android:Theme.Material.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

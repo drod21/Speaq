@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/derekrodriguez/Speaq/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="09a58816aba3dcd1277b079388b005ccd3611e3f">
+        <dex dex="/Users/derekrodriguez/Speaq/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_23f8699f673a796579c5242944364b691bd5a989/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/derekrodriguez/Speaq/libs/android-support-v4.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="4a6be13368bb64c5a0b0460632d228a1a915f58f">
+        <dex dex="/Users/derekrodriguez/Speaq/build/intermediates/transforms/dex/debug/folders/1000/2/android-support-v4_c3d0d6e361df81c1adbdb54b7c8513e6ecb234f2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/derekrodriguez/Speaq/libs/androidannotations-api-2.7.1.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="064169e7aacaaa76f5a0ca5eea66e2fc02737a17">
+        <dex dex="/Users/derekrodriguez/Speaq/build/intermediates/transforms/dex/debug/folders/1000/2/androidannotations-api-2.7.1_d48738e467aca451edefa5be38b5f428f8ba9a74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/derekrodriguez/Speaq/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="b63ccb756cd00341b2c355c78a1c318a9af67bcf">
+        <dex dex="/Users/derekrodriguez/Speaq/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_28abd17cdd1b8f0c411c65c20ee19da0bf230bc9/classes.dex" />
+    </item>
+
+</items>

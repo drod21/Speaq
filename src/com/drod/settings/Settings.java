@@ -7,20 +7,20 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
 public class Settings extends PreferenceActivity {
-    static final String CALLER_READ="caller_read";
-    static final String BODY_READ="body_read";
-    static final String BLUETOOTH_AUTO="bluetooth_auto";
-    static final String HEADSET_AUTO="headset_auto";
+    static final String CALLER_READ = "caller_read";
+    static final String BODY_READ = "body_read";
+    static final String BLUETOOTH_AUTO = "bluetooth_auto";
+    static final String HEADSET_AUTO = "headset_auto";
 
     private static SharedPreferences mPrefs = null;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		
-		getFragmentManager().beginTransaction().replace(android.R.id.content,
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        getFragmentManager().beginTransaction().replace(android.R.id.content,
                 new SettingsFragment()).commit();
-	}
+    }
 
     public void setContext(Context context) {
         if (context == null && mPrefs != null) {

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86,x86_64"
+    api-level="24"
+    density="420dpi"
+    format="8"
+    timestamp="6733601987289"
+    token="-3876344383721641461"
+    verifier="MANIFEST_FILE_CHANGE" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <artifact
+        location="/Users/derekrodriguez/Speaq/build/outputs/apk/Speaq-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="6733601987289"
+        verifier="MANIFEST_FILE_CHANGE" >
+        <artifact
+            location="/Users/derekrodriguez/Speaq/build/outputs/apk/Speaq-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

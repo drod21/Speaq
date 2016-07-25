@@ -1,0 +1,7 @@
+#Mon Jul 25 07:12:20 EDT 2016
+base.0=/Users/derekrodriguez/Speaq/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_28abd17cdd1b8f0c411c65c20ee19da0bf230bc9
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/derekrodriguez/Speaq/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_23f8699f673a796579c5242944364b691bd5a989/classes.dex
+base.1=/Users/derekrodriguez/Speaq/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_23f8699f673a796579c5242944364b691bd5a989
+file.0=/Users/derekrodriguez/Speaq/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_28abd17cdd1b8f0c411c65c20ee19da0bf230bc9/classes.dex
